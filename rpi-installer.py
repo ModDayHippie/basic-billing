@@ -4,8 +4,8 @@
 
 import os
 import time
-
-
+import PyCrypt
+import base64
 #Info about moduals about to be installed
 
 print('---------------------------------------------------------------------------------')
@@ -33,4 +33,21 @@ if EULA == 'n':
    print('exiting program')
    input(exit())
 
+os.system('sudo apt-get pip3')
+os.system('sudo pip install cryptography')
+os.system('sudo pip install PySimpleGUI')
 
+
+#these are encrypthion scripts
+from Crypto.cipher import AES
+
+def encryption(privateInfo):
+#   BLOCK_SIZE = 16
+#   PADDING ='{'
+#   pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * PADDING
+#   EncodeAES = lambda c, s: base64.b64encode(c.encrypt(pad(s)))
+#   secret = os.urandom(BLOCK_SIZE)
+#   print 'encriptioon key:', secret
+#   cipher = AES.new(secret)
+#   encoded = EndcodeAES(cipher, pricateInfo)
+   
