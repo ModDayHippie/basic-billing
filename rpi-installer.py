@@ -4,8 +4,10 @@
 
 import os
 import time
-import PyCrypt
+#&import PyCrypt
+#&pycrypt is not part of base and cannot be imported untill after it is installed via pip
 import base64
+
 #Info about moduals about to be installed
 
 print('---------------------------------------------------------------------------------')
@@ -33,15 +35,49 @@ if EULA == 'n':
    print('exiting program')
    input(exit())
 
-os.system('sudo apt-get pip3')
-os.system('sudo pip install cryptography')
-os.system('sudo pip install PySimpleGUI')
+#these lines install and tell user what is being installed
 
+print('--------------------------------------------------------------------------------')
+print('Installing System Updates')
+print('--------------------------------------------------------------------------------')
+time.sleep(3)
+os.system('sudo apt-get update')
+os.system('sudo apt-get install')
+print('--------------------------------------------------------------------------------')
+print('**System Updates Installed')
+print('--------------------------------------------------------------------------------')
+time.sleep(3)
+print('Installing pip3')
+print('--------------------------------------------------------------------------------')
+time.sleep(3)
+os.system('sudo apt install python-pip')
+print('--------------------------------------------------------------------------------')
+print('***pip3 has been installed**')
+print('--------------------------------------------------------------------------------')
+time.sleep(3)
+print('Installing PySimpleGUI')
+print('-------------------------------------------------------------------------------')
+time.sleep(3)
+#&os.system('sudo pip install cryptography')
+os.system('sudo pip install PySimpleGUI')
+print('-------------------------------------------------------------------------------')
+print('**PySimple Has Been Installed**')
+time.sleep(3)
+print('All Moduals Have Been Installed')
+
+#these commads ask if the user wants to run right after installing 
+
+RUN = input('Do you want to run the billing login.py?(y/n):')
+
+if RUN == 'y':
+   os.system('sudo python3 login.py')
+if RUN == 'n':
+   input(exit())
 
 #these are encrypthion scripts
-from Crypto.cipher import AES
+#from Crypto.cipher import AES
 
-def encryption(privateInfo):
+#def encryption(privateInfo):
 #   BLOCK_SIZE = 16
 #   PADDING ='{'
 #   pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * PADDING
